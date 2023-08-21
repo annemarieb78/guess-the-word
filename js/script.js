@@ -20,7 +20,6 @@ const getWord = async function () {
   const randomIndex = Math.floor(Math.random() * wordArray.length);
   word = wordArray[randomIndex].trim();
   placeholder(word);
-
 };
 
 getWord();
@@ -33,8 +32,6 @@ const placeholder = function (word) {
   }
   wordInProgress.innerText = letterPlaceholder.join("");
 };
-
-
 
 guessButton.addEventListener("click", function (e) {
   e.preventDefault();
@@ -113,6 +110,7 @@ const countGuesses = function (guess) {
     message.innerText = `Good guess! The word has the letter ${guess}`;
   }
 
+  //Function to show how many guesses left
   if (remainingGuesses === 0) {
     message.innerText = `The game is over, you have no guesses left. The word is ${word}`;
   } else if (remainingGuesses === 1) {
